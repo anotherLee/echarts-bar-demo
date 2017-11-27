@@ -24,6 +24,7 @@
         var myChart = echarts.init(document.getElementById('bar'))
         var y_data = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
         var series_data = [100, 78, 124, 28, 65, 19, 78]
+        var series_data2 = [98,23,49,89,68,49,25]
         var option = {
             title: {
                 text: "条形图Demo",
@@ -36,6 +37,7 @@
                 },
             },
             legend: {
+                data:["小明","小红"]
             },
             grid: {
                 left: "10%",
@@ -54,11 +56,17 @@
             itemStyle:{
                 normal:{}
             },
-            barWidth:35,
+            MaxbarWidth:35,
             series: [
                 {
+                    name:"小明",
                     type: "bar",
                     data: series_data
+                },
+                {
+                    name:"小红",
+                    type:"bar",
+                    data:series_data2
                 }
             ]
 
