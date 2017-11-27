@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Echarts-bar</title>
+    <style>
+        #bar {
+            width: 800px;
+            height: 500px;
+            margin: 150px auto 0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bar"></div>
+
+    <script src="./echarts.min.js"></script>
+    <script>
+        var myChart = echarts.init(document.getElementById('bar'))
+        var y_data = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+        var series_data = [100, 78, 124, 28, 65, 19, 78]
+        var option = {
+            title: {
+                text: "条形图Demo",
+                subtext: "测试一下"
+            },
+            tooltip: {
+                trigger: "axis",
+                axisPointer: {
+                    type: "shadow"
+                },
+            },
+            legend: {
+            },
+            grid: {
+                left: "10%",
+                bottom: "5%"
+            },
+            xAxis: {
+                type: "value",
+            },
+            yAxis: {
+                type: "category",
+                axisTick: {
+                    alignWithLabel: true
+                },
+                data: y_data
+            },
+            itemStyle:{
+                normal:{}
+            },
+            barWidth:35,
+            series: [
+                {
+                    type: "bar",
+                    data: series_data
+                }
+            ]
+
+        }
+        myChart.setOption(option, true)
+    </script>
+
+</body>
+
+</html>
